@@ -1,37 +1,48 @@
 import { useState } from "react";
+import "./style.css";
 
 function App() {
-  const [randomNumber, setRandomNumber] = useState(5)
-  const [minNumber, setMinNumber] = useState(2)
-  const [maxNumber, setmaxNumber] = useState(10)
+  const [randomNumber, setRandomNumber] = useState(4);
+  const [minNumber, setMinNumber] = useState(2);
+  const [maxNumber, setmaxNumber] = useState(10);
 
-  console.log(minNumber,maxNumber)
+  // console.log(minNumber,maxNumber)
 
-  return (     
-    <div className="Container">
-      <div className="Hero">
-        <h4>
-          Random Number: <span>5</span>{" "}
-        </h4>
-      </div>
-      <div className="NumberContent">
-        <div className="Content">
-          <div className="randomNumber">
+  const getRandomNumber = () => {
+    setRandomNumber(
+      Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber)
+    );
+  };
+
+  return (
+    <div className="hero">
+      <h3>Random Number Generator</h3>
+      <p>Please Enter Two Numbers</p>
+      <div className="container">
+        <div className="randomNum">
+          <div className="numContainer">
             <h5>Min:</h5>
-            <input 
-            type="number"
-            value={minNumber}
-            onChange={(e)=>setMinNumber(e.target.value)} />
+            <input
+              type="number"
+              value={minNumber}
+              onChange={(e) => setMinNumber(+e.target.value)}
+            />
           </div>
-          <div className="randomNumber">
+          <div className="numContainer">
             <h5>Max:</h5>
-            <input 
-            type="number"
-            value={maxNumber}
-            onChange={(e)=>setmaxNumber(e.target.value)} />
+            <input
+              type="number"
+              value={maxNumber}
+              onChange={(e) => setmaxNumber(+e.target.value)}
+            />
           </div>
         </div>
-        <button></button>
+        <button onClick={getRandomNumber}>Get Random Number</button>
+      </div>
+      <div className="hero">
+        <h3>
+          Random Number: <span>{randomNumber}</span>
+        </h3>
       </div>
     </div>
   );

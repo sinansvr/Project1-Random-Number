@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #a299ac;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin:0;
+}
+
+.hero{
+    background-color: rgb(219, 194, 155);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+input{
+    width: 100%;
+    display: block;
+    background-color: #d66316;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(0, 0, 0, 0.1);
+}
+ input::placeholder{
+    color: #bbb;
+}
+ input:focus{
+    outline: none;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    background-color: rgb(96, 172, 207);
+    border: none;
+    color: #fff;
+}
+
+button:hover{
+    scale: 1.05;
+}
+
+
+@media(max-width:700px){
+    .card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .user-form{
+        max-width: 400px;
+    }
+}
+
